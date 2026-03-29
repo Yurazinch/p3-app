@@ -357,7 +357,7 @@ new #[Title('Сервис, который делает учебу проще')] 
                 </div>
             </div>
             <form id="confirm" class="form-modal" action="">
-                <input class="form-modal__input" type="email" placeholder="Введите имя">
+                <input class="form-modal__input" type="email" placeholder="Введите email указанный при регистрации">
                 <div class="form-modal__buttons">
                     <button class="cta-button form-modal__submit" type="submit">Отправить</button>
                 </div>
@@ -390,62 +390,5 @@ new #[Title('Сервис, который делает учебу проще')] 
                 </div>
             </form>
         </div>
-    </dialog> 
-    @script
-        <script>
-            const regButtons = document.querySelectorAll('.regbtn');
-            const logButton = document.getElementById('logbtn');
-            const backButton = document.getElementById('backbtn');
-            const confirmButton = document.getElementById('confirmbtn');
-            const logModal = document.getElementById('logModal');
-            const regModal = document.getElementById('regModal');
-            const backModal = document.getElementById('backModal');
-            const confirModal = document.getElementById('confirModal');
-            const closeLog = document.getElementById('closeLog');
-            const closeReg = document.getElementById('closeReg');
-            const closeBack = document.getElementById('closeBack');
-            const closeConfirm = document.getElementById('closeConfirm');
-            regButtons.forEach(regButton => {
-                regButton.addEventListener('click', () => {
-                    regModal.showModal();
-                });
-            });
-            logButton.addEventListener('click', () => {
-                logModal.showModal();
-            });
-            backButton.addEventListener('click', () => {
-                backModal.showModal();
-            });
-            confirmButton.addEventListener('click', () => {
-                confirModal.showModal();
-                logModal.close();
-            });
-            closeReg.addEventListener('click', () => {
-                regModal.close();
-            });            
-            closeLog.addEventListener('click', () => {
-                logModal.close();
-            });
-            closeBack.addEventListener('click', () => {
-                backModal.close();
-            });
-            closeConfirm.addEventListener('click', () => {
-                confirModal.close();
-            });
-            const dialogs = document.querySelectorAll('dialog');
-            dialogs.forEach(dialog => {
-                dialog.addEventListener('click', (e) => {
-                    const dialogDimensions = dialog.getBoundingClientRect();
-                    if (
-                        e.clientX < dialogDimensions.left ||
-                        e.clientX > dialogDimensions.right ||
-                        e.clientY < dialogDimensions.top ||
-                        e.clientY > dialogDimensions.bottom
-                    ) {
-                        dialog.close();
-                    }
-                })
-            })    
-        </script>        
-    @endscript
+    </dialog>     
 </div>

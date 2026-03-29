@@ -3,9 +3,15 @@
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
-new #[Title('Личный кабинет пользователя')] class extends Component
+new #[Title('Личный кабинет заказчика')] class extends Component
 {
-    //
+    public string $cabinetTitle;
+
+    public function mount()
+    {
+        $this->cabinetTitle = 'Вы в системе как заказчик';
+        $this->dispatch('component-changed', cabinetTitle: $this->cabinetTitle);
+    }
 };
 ?>
 

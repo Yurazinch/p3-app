@@ -9,7 +9,9 @@
         @vite([
         'resources/css/lending.css',
         'resources/css/cabinet.css',
-        'resources/js/app.js'])
+        'resources/js/app.js',
+        'resources/js/lending.js',
+        'resources/js/admin.js'])
 
         @livewireStyles
     </head>
@@ -24,7 +26,8 @@
                     <p class="tagline__text">Сервис, который делает учёбу проще</p>
                 </div>
             </div>
-            <nav class="menu">
+            <livewire:menu-component />
+            <!--<nav class="menu">
                 <ul class="menu__lists">
                     <li class="menu__list">Главная</li>
                     <li class="menu__list">Преимущества</li>
@@ -35,7 +38,7 @@
             <div class="cta-container">
                 <button class="regbtn cta-header register">Регистрация</button>
                 <button id="logbtn" class="cta-header login">Вход</button>
-            </div>
+            </div>-->
         </header>        
         {{ $slot }}
         <footer>
