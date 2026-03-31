@@ -61,7 +61,7 @@ new class extends Component
         $validated = $this->validate();
         Urgency::create($validated);
         $this->name = '';
-        $this->loadPackages();
+        $this->loadUrgencys();
     }
 
     public function urgencyUpdate()
@@ -76,8 +76,8 @@ new class extends Component
 
     public function urgencyDelete($id)
     {
-        $package = Urgency::find($id);
-        $package->delete();
+        $urgency = Urgency::find($id);
+        $urgency->delete();
         $this->loadUrgencys();
     }
 
@@ -122,7 +122,7 @@ new class extends Component
             <span class="admin-inner__form-error-text">@error('name') {{ $message }} @enderror</span>
         </div>
         <div class="admin-inner__form-wrapper">
-            <form id="edit-package-form" class="admin-modal__form" wire:submit="urgencyUpdate" method="dialog">            
+            <form class="admin-inner__form" wire:submit="urgencyUpdate" method="dialog">            
                 @csrf
                 <label class="admin-inner__form-label" for="pkgname">Новое название для {{ $urgname }}: </label>
                 <input id="pkgedit" class="admin-inner__form-input" type="text" autocomplete="off" value="" wire:model="name">                

@@ -88,6 +88,7 @@
 }
 
 .dashboard__wrapper {
+    position: relative;
     display: none;
     box-sizing: border-box;
     box-shadow: 0 0 5px #AEADAD;
@@ -119,7 +120,6 @@
 
 .user__header {
     box-sizing: border-box;
-    position: relative;
     width: 50%;
     height: 100px;
 }
@@ -794,19 +794,20 @@ tbody td {
     font-size: 16px;
 }
 
-.admin-modal__container {
+.admin-section__segment-modal {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
     width: 480px;
     height: auto;
-    border: none;
+    border: solid 1px #938F8F;
     border-radius: 32px;
     padding:  20px 24px;
+    background-color: #FFFFFF;
 }
 
-.admin-modal__header {
+.admin-section__modal-header {
     box-sizing: border-box;
     height: 30px;
     display: flex;
@@ -814,26 +815,28 @@ tbody td {
     align-items: flex-start;
 }
 
-.admin-modal__header-title {
+.admin-section__modal-title {
     box-sizing: border-box;
     height: 30px;
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
-.admin-modal__header-text {
+.admin-section__modal-title-text {
     margin: 0;
     font-family: "Montserrat";
     font-weight: 800;
     font-size: 24px;
+    vertical-align: middle;
 }
 
-.admin-modal__close {
+.admin-section__modal-close {
     border: none;
     background-color: #FFFFFF;
 }
 
-.admin-modal__cross {
+.admin-section__modal-cross {
     width: 14px;
     height: 14px;
     cursor: pointer;
@@ -856,24 +859,30 @@ tbody td {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     gap: 16px;
     align-items: center;
 }
 
-.admin-modal__form-input {
+.admin-modal__form-input, .admin-modal__form-select {
     box-sizing: border-box;
     height: 40px;
-    width: calc(70% - 8px);
+    width: 100%;
     border: solid 1px #938F8F;
     border-radius: 15px;
     text-align: center;
     font-size: 16px;
 }
 
+.admin-modal__form-label {
+    width: 80%;
+    font-size: 14px;
+}
+
 .admin-modal__form-button {
     box-sizing: border-box;
     height: 30px;
-    width: calc(30% - 8px);
+    width: 50%;
     border: none;
     background-color: #235189;
     border-radius: 10px;
@@ -884,4 +893,17 @@ tbody td {
 
 .close {
     display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+  z-index: 1000; /* Поверх всего */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

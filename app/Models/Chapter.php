@@ -3,8 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Chapter extends Model
 {
     protected $fillable = ['name'];
+
+    protected function disciplines(): Hasmany
+    {
+        return $this->hasMany(Discipline::class);
+    }
 }

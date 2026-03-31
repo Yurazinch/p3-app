@@ -41,9 +41,9 @@ new #[Title('Кабинет администратора')] class extends Compon
                     <h1 class="user__header-text">Основные настройки</h1>
                 </div>
             </div>                
-            <livewire:admin.packages @saved="$refresh"/>
-            <livewire:admin.urgencys @saved="$refresh"/>
-            <livewire:admin.chapters @saved="$refresh"/>
+            <livewire:admin.packages />
+            <livewire:admin.urgencys />
+            <livewire:admin.chapters />
         </section>                
         <section class="dashboard__wrapper">
             <div class="user__header">
@@ -51,60 +51,7 @@ new #[Title('Кабинет администратора')] class extends Compon
                     <h1 class="user__header-text">Дисциплины</h1>
                 </div>                 
             </div>
-            <div class="admin-section__segment">
-                <div class="admin-section__segment-header">                    
-                    <select class="admin-section__part-select" name="subject-volume">
-                        <option class="admin-section__part-select-option">Выбрать раздел</option>
-                    </select>                    
-                    <button class="admin-section__cell-button">Создать</button>
-                </div>
-                <div class="admin-tables">
-                    <div class="admin-tables__head-wrapper">
-                        <div class="admin-tables__head cell-id">ID</div>
-                        <div class="admin-tables__head cell-volume">Раздел</div>
-                        <div class="admin-tables__head cell-subject">Дисциплина</div>
-                        <div class="admin-tables__head cell-edition">Изменить</div>
-                    </div>
-                    <ul class="admin-tables__lists">                        
-                        <li class="admin-tables__list">
-                            <div class="admin-tables__list-wrapper">
-                                <div class="admin-tables__list-cell cell-id">ID</div>
-                                <div class="admin-tables__list-cell cell-volume">Юридические</div>
-                                <div class="admin-tables__list-cell cell-subject">Теория государства и права (ТГП)</div>
-                                <div class="admin-tables__list-cell cell-edit"><button class="cell-button"><img src="{{ asset('storage/img/pen_edit_icon.webp') }}" alt=""></button></div>
-                                <div class="admin-tables__list-cell cell-delete"><button class="cell-button"><img src="{{ asset('storage/img/basket_trash_icon.webp') }}" alt=""></button></div>
-                            </div>
-                        </li>
-                        <li class="admin-tables__list">
-                            <div class="admin-tables__list-wrapper">
-                                <div class="admin-tables__list-cell cell-id">ID</div>
-                                <div class="admin-tables__list-cell cell-volume">Юридические</div>
-                                <div class="admin-tables__list-cell cell-subject">История государства и права (ИГП)</div>
-                                <div class="admin-tables__list-cell cell-edit"><button class="cell-button"><img src="{{ asset('storage/img/pen_edit_icon.webp') }}" alt=""></button></div>
-                                <div class="admin-tables__list-cell cell-delete"><button class="cell-button"><img src="{{ asset('storage/img/basket_trash_icon.webp') }}" alt=""></button></div>
-                            </div>
-                        </li>
-                        <li class="admin-tables__list">
-                            <div class="admin-tables__list-wrapper">
-                                <div class="admin-tables__list-cell cell-id">ID</div>
-                                <div class="admin-tables__list-cell cell-volume">Юридические</div>
-                                <div class="admin-tables__list-cell cell-subject">Конституционное и муниципальное право России</div>
-                                <div class="admin-tables__list-cell cell-edit"><button class="cell-button"><img src="{{ asset('storage/img/pen_edit_icon.webp') }}" alt=""></button></div>
-                                <div class="admin-tables__list-cell cell-delete"><button class="cell-button"><img src="{{ asset('storage/img/basket_trash_icon.webp') }}" alt=""></button></div>
-                            </div>
-                        </li>
-                        <li class="admin-tables__list">
-                            <div class="admin-tables__list-wrapper">
-                                <div class="admin-tables__list-cell cell-id">ID</div>
-                                <div class="admin-tables__list-cell cell-volume">Юридические</div>
-                                <div class="admin-tables__list-cell cell-subject">Конституционное и муниципальное право зарубежных стран</div>
-                                <div class="admin-tables__list-cell cell-edit"><button class="cell-button"><img src="{{ asset('storage/img/pen_edit_icon.webp') }}" alt=""></button></div>
-                                <div class="admin-tables__list-cell cell-delete"><button class="cell-button"><img src="{{ asset('storage/img/basket_trash_icon.webp') }}" alt=""></button></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <livewire:admin.disciplines />            
         </section>
         <section class="dashboard__wrapper">
             <div class="user__header">

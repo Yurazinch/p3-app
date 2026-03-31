@@ -122,7 +122,7 @@ new class extends Component
             <span class="admin-inner__form-error-text">@error('name') {{ $message }} @enderror</span>
         </div>
         <div class="admin-inner__form-wrapper">
-            <form id="edit-package-form" class="admin-modal__form" wire:submit="packageUpdate" method="dialog">            
+            <form class="admin-inner__form" wire:submit="packageUpdate" method="dialog">            
                 @csrf
                 <label class="admin-inner__form-label" for="pkgname">Новое название для {{ $pkgname }}: </label>
                 <input id="pkgedit" class="admin-inner__form-input" type="text" autocomplete="off" value="" wire:model="name">                

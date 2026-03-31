@@ -18,7 +18,7 @@ new class extends Component
     #[Validate('string', message: 'Неверный формат данных')] 
     #[Validate('unique:packages,name', message: 'Такое название уже есть')]
     #[Validate('min:3', message: 'Слишком короткое')] 
-    #[Validate('max:10', message: 'Больше 10 символов')]  
+    #[Validate('max:20', message: 'Больше 20 символов')]  
     public $name = '';
 
     protected function prepareForValidation($attributes) {        
@@ -122,7 +122,7 @@ new class extends Component
             <span class="admin-inner__form-error-text">@error('name') {{ $message }} @enderror</span>
         </div>
         <div class="admin-inner__form-wrapper">
-            <form id="edit-package-form" class="admin-modal__form" wire:submit="chapterUpdate" method="dialog">            
+            <form class="admin-inner__form" wire:submit="chapterUpdate">            
                 @csrf
                 <label class="admin-inner__form-label" for="pkgname">Новое название для {{ $cptname }}: </label>
                 <input id="pkgedit" class="admin-inner__form-input" type="text" autocomplete="off" value="" wire:model="name">                
