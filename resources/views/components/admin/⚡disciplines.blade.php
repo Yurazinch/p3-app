@@ -5,7 +5,6 @@ use App\Models\Chapter;
 use App\Models\Discipline;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
-use Livewire\Attributes\On;
 
 new class extends Component
 {
@@ -16,7 +15,7 @@ new class extends Component
     #[Validate('max:55', message: 'Слишком длинное (больше 55)')]  
     public $name = '';
 
-    #[Validate('required', message: 'Не выбран раздел')]
+    #[Validate('required', message: 'Нужно выбрать раздел')]
     public $chapt = '';
 
     public $chapters = [];
@@ -160,7 +159,7 @@ new class extends Component
                         @endif
                     </select>
                     <div class="admin-modal__form-error">
-                        <span class="admin-modal__form-error-text">@error('chapterName') {{ $message }} @enderror</span>
+                        <span class="admin-modal__form-error-text">@error('chapt') {{ $message }} @enderror</span>
                     </div>
                     <label class="admin-modal__form-label" for="dspname">Название:</label>
                     <input id="dspname" class="admin-modal__form-input" type="text" autocomplete="off" value="" wire:model="name">

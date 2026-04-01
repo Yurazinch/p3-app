@@ -121,13 +121,10 @@
 .user__header {
     box-sizing: border-box;
     width: 50%;
-    height: 100px;
+    height: 60px;
 }
 
-.user__header-title {
-    position: absolute;
-    left: 16px;
-    top: 10px;
+.user__header-title {    
     box-sizing: border-box;
     width: 450px;
 }
@@ -567,24 +564,23 @@ tbody td {
     height: auto;  
 }
 
-.width-160 {
+.height-160 {
     height: 160px;
     overflow-y: auto;
 }
 
-.width-240 {    
+.height-240 {    
     height: 240px;
     overflow-y: auto;
 }
 
-.width-520 {
+.height-520 {
     height: 520px;
     overflow-y: auto;
 }
 
 .height-130 {
-    min-height: auto;
-    max-height: 120px;
+    height: 125px;
     overflow-y: auto;
 }
 
@@ -901,7 +897,8 @@ tbody td {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   z-index: 1000; /* Поверх всего */
   display: flex;
   justify-content: center;
